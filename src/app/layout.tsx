@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Suspense } from "react";
+import FirebaseProvider from "@/components/firebase-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,7 +31,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Suspense fallback={null}>
+            <FirebaseProvider>{children}</FirebaseProvider>
+          </Suspense>
         </ThemeProvider>
       </body>
     </html>
