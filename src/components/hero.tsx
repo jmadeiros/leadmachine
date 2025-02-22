@@ -16,18 +16,21 @@ export function Hero() {
     >
       <div className="max-w-3xl space-y-6">
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-          Transform Your{" "}
-          <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-            Lead Generation
-          </span>{" "}
-          Process
+          Power your business with{" "}
+          <span className="text-purple-600 dark:text-purple-400">
+            Lead Machine
+          </span>
         </h1>
         <p className="mx-auto max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl">
           Automate your lead generation with AI-powered tools. Generate more
           qualified leads, optimize your funnel, and scale your business growth.
         </p>
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-          <Button size="lg" onClick={() => scrollToElement("calendar")}>
+          <Button 
+            size="lg" 
+            onClick={() => scrollToElement("calendar")}
+            className="bg-purple-600 hover:bg-purple-700"
+          >
             Book a Demo
             <Calendar className="ml-2 h-4 w-4" />
           </Button>

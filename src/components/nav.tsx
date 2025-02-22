@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { Moon, Sun } from "lucide-react"
+import { Moon, Settings, Sun, Rss } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
@@ -45,7 +45,8 @@ export function Navigation() {
           <NavigationMenuList>
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2")}>
+                  <Settings className="h-5 w-5 text-purple-600" />
                   <span className="font-bold">Lead Machine</span>
                 </NavigationMenuLink>
               </Link>
@@ -67,9 +68,10 @@ export function Navigation() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/about" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  About
+              <Link href="/blog" legacyBehavior passHref>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2")}>
+                  <Rss className="h-4 w-4" />
+                  Blog
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
@@ -92,7 +94,7 @@ export function Navigation() {
             <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             <span className="sr-only">Toggle theme</span>
           </Button>
-          <Button>Try For Free</Button>
+          <Button className="bg-purple-600 hover:bg-purple-700">Try For Free</Button>
         </div>
       </div>
     </div>
